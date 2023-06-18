@@ -1,10 +1,33 @@
+:root {
+  --lt0: #ffffff;
+  --lt1: #edffca;
+  --lt2: #dcff97;
+  --lt3: #ccff65;
+  --lt4: #bbff32;
+  --lt5: #aaff00;
+}
+
 body {
-  margin: 0;
+  display: inherit;
+  height: inherit;
+  width: inherit;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+}
+
+html {
+  display: flex;
+  background-color: var(--lt1);
+  height: 100%;
+  width: 100%;
+
 }
 
 code {

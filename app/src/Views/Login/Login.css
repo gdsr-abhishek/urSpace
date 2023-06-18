@@ -1,0 +1,58 @@
+@import url(../../index.css);
+
+.form {
+    border-radius: 10px;
+    color: white;
+
+    display: grid;
+    grid-template-columns: auto;
+    column-gap: 0px;
+    row-gap: 0px;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 500px;
+    height: 500px;
+    background-color: var(--lt2);
+    box-shadow: 0px 0px 2px 2px gray;
+}
+
+h1 {
+    display: flex;
+    padding: 10px;
+    background-color: var(--lt5);
+    border-radius: 10px;
+    justify-content: center;
+
+}
+
+div.formField {
+    display: grid;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.credInput {
+    border: 0;
+    width: 200px;
+    height: 50px;
+    outline: none;
+
+}
+
+.credInput:focus {
+    border: 0 !important;
+    border-bottom: 2px solid var(--lt5) !important;
+    width: 200px;
+    height: 50px;
+}
+
+
+.label {
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: var(--lt5);
+    color: var(--lt0);
+}
