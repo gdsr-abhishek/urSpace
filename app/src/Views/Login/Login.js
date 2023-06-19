@@ -18,8 +18,9 @@ export default function Login() {
                 <label for="password" className='label'>Password</label>
                 <input id="password" className="credInput" type={ishidden ? 'password' : 'text'} />
             </div>
-
-            <input type='submit' />
+            <div className='formField'>
+                <input type='submit' className='submit' />
+            </div>
         </form>
     );
 }
