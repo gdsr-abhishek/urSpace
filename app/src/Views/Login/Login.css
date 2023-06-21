@@ -1,9 +1,10 @@
 @import url(../../index.css);
 
 .form {
-    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2px);
     color: white;
-
+    border-radius: 10px;
     display: grid;
     grid-template-columns: auto;
     column-gap: 0px;
@@ -13,10 +14,6 @@
     vertical-align: middle;
     width: 500px;
     height: 500px;
-    background: linear-gradient(to right top, rgb(255, 255, 255, 0.1), rgb(255, 255, 255, 0.6), rgb(255, 255, 255, 0.9));
-    backdrop-filter: 100;
-
-    box-shadow: 0px 0px 5px 1px var(--lt4);
 }
 
 .submit {
@@ -24,25 +21,26 @@
     width: fit-content;
     height: fit-content;
     padding: 10px;
-    background-color: var(--lt5);
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2px);
+    color: var(--lt0);
     border-radius: 10px;
-    color: white;
-    transition: all 250ms ease-in-out;
+    transition: all 150ms ease-in-out;
 }
 
 .submit:hover {
-    background-color: var(--lt1);
-    color: var(--lt5);
+    background-color: rgba(255, 255, 255, 0.5);
+    color: var(--lt1);
     box-shadow: 0px 0px 3px 1px var(--lt4);
     backdrop-filter: 3;
 }
 
-h1 {
+h1.formLabel {
     display: flex;
     padding: 10px;
-    background: linear-gradient(rgba(151, 227, 255, 0.3), rgb(151, 227, 255, 0.6), rgb(151, 227, 255, 0.9));
-    backdrop-filter: 200;
-    color: var(--lt5);
+    background-color: rgb(255, 255, 255, 0.3);
+    backdrop-filter: blur(2px);
+    color: var(--lt0);
     border-radius: 10px;
     justify-content: center;
 
@@ -61,16 +59,16 @@ div.formField {
     width: 200px;
     height: 50px;
     outline: none;
-    background: linear-gradient(to right top, rgb(255, 255, 255, 0.1), rgb(255, 255, 255, 0.9));
-    backdrop-filter: 200;
-    box-shadow: 0px 0px 3px 1px var(--lt2);
+    box-shadow: 0px 0px 5px 2px var(--lt2);
+    background: linear-gradient(rgba(255, 255, 255, 0.3), rgb(255, 255, 255, 0.6), rgb(255, 255, 255, 0.9));
     color: var(--lt5);
 
 }
 
 .credInput:focus {
     border: 0 !important;
-    border-bottom: 4px solid var(--lt5) !important;
+    border: 2px solid var(--lt5) !important;
+
     width: 200px;
     height: 50px;
 }
@@ -81,7 +79,99 @@ div.formField {
     padding: 10px;
     border-radius: 10px;
     margin: 10px;
-    background: linear-gradient(rgba(151, 227, 255, 0.3), rgb(151, 227, 255, 0.6), rgb(151, 227, 255, 0.9));
-    backdrop-filter: 200;
-    color: var(--lt5);
+
+    background-color: rgb(255, 255, 255, 0.3);
+    backdrop-filter: blur(2px);
+    color: var(--lt0);
+}
+
+.Intro {
+    border-radius: 10px;
+
+    color: white;
+    padding: 100px;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 10px;
+    row-gap: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: fit-content;
+
+    & h1 {
+        position: absolute;
+        background: none;
+        width: auto;
+        height: auto;
+        color: white;
+        font-size: xx-large;
+        font-family: fantasy;
+        text-shadow: 1px 1px 2px black;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+h3 {
+    color: rgb(228, 224, 224);
+    text-decoration: solid;
+    font-family: fantasy;
+    text-shadow: 1px 1px 2px black;
+    animation: rotateWords 9s ease-in-out infinite;
+    position: absolute;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    &:nth-child(2) {
+        animation-delay: 3s;
+    }
+
+    &:nth-child(3) {
+        animation-delay: 6s;
+    }
+}
+
+@keyframes rotateWords {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    7%,
+    24% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    43%,
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+.row {
+    display: flex;
+    grid-template-columns: auto auto;
+    column-gap: 20px;
+}
+
+.loginField {
+    background-color: rgba(50, 200, 255, 0.2);
+    backdrop-filter: blur(100);
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.5); */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    column-gap: 20px;
+    z-index: 1;
 }

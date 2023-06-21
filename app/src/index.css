@@ -1,10 +1,10 @@
 :root {
-  --lt0: #ffffff;
-  --lt1: #caf1ff;
-  --lt2: #97e3ff;
-  --lt3: #65d6ff;
-  --lt4: #32c8ff;
-  --lt5: #00bbff;
+  --lt0: rgb(255, 255, 255);
+  --lt1: rgb(202, 241, 255);
+  --lt2: rgb(151, 227, 255);
+  --lt3: rgb(101, 214, 255);
+  --lt4: rgb(50, 200, 255);
+  --lt5: rgb(0, 187, 255);
 }
 
 body {
@@ -24,9 +24,9 @@ body {
 
 html {
   display: flex;
-  background-color: var(--lt2);
   height: 100%;
   width: 100%;
+  background-color: black;
 
 }
 
