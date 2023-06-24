@@ -3,9 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import particleOptions from './particleOptions';
 export default function Login() {
+    let [formData, setFormData] = useState({
+        username: '',
+        password: ''
+    })
     const particlesInit = useCallback(async engine => {
         console.log(engine);
         // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
@@ -18,6 +22,10 @@ export default function Login() {
         await console.log(container);
     }, []);
     let ishidden = true;
+    const handleChanges = (e) => {
+        setFormData({ ...formData, [e.target.id]: e.target.value });
+        console.log(formData)
+    };
     let navigate = useNavigate();
     let options = particleOptions;
     return (
@@ -37,17 +45,20 @@ export default function Login() {
                 </h1>
             </div>
             <form className="form" onSubmit={() => {
-
+                if (formData.username !== 'admin' || formData.password !== 'admin') {
+                    alert('Wrong Username or Password');
+                    return;
+                }
                 navigate('/homepage');
             }}>
                 <h1 className='formLabel'>Login</h1>
                 <div className='formField'>
-                    <label for="name" className='label'>Username</label>
-                    <input id="name" className="credInput" type="text" />
+                    <label htmlfor="username" className='label'>Username</label>
+                    <input id="username" onChange={handleChanges} className="credInput" type="text" />
                 </div>
                 <div className='formField'>
-                    <label for="password" className='label'>Password</label>
-                    <input id="password" className="credInput" type={ishidden ? 'password' : 'text'} />
+                    <label htmlfor="password" className='label'>Password</label>
+                    <input id="password" onChange={handleChanges} className="credInput" type={ishidden ? 'password' : 'text'} />
                 </div>
                 <div className='formField'>
                     <input type='submit' className='submit' />
